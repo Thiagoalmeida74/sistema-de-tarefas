@@ -19,3 +19,39 @@ def criar_id(tarefas):
         return 1
     
     return max(tarefa.id for tarefa in tarefas) + 1
+
+def mostrar_tarefa(tarefa):
+    print(f"ID: {tarefa.id}")
+    print(f"Título: {tarefa.titulo}")
+    print(f"Descrição: {tarefa.descricao}")
+    print(f"Prioridade: {tarefa.prioridade}")
+    print(f"Status: {tarefa.status}")
+
+def listar_tarefas(tarefas):
+    if not tarefas:
+        print("Nenhuma tarefa cadastrada.")
+        return
+
+    for tarefa in tarefas:
+        mostrar_tarefa(tarefa)
+        print("-" * 30)
+        
+def buscar_tarefas(tarefas):
+    buscar = input ("qual é o nome da tarefa que voce esta buscando?: ")
+    
+    encontrou = False
+    
+    if not tarefas:
+        print("nenhuma tarefa encontrada")
+        return
+        
+        
+    for tarefa in tarefas:
+        
+        if buscar == tarefa.titulo:
+             mostrar_tarefa(tarefa)
+             encontrou = True
+             
+        if not encontrou:
+            print("nenhuma tarefa encontrada.")
+        

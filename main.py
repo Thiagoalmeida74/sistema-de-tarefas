@@ -1,4 +1,5 @@
-from funcoes import criar_tarefa
+from funcoes import criar_tarefa, listar_tarefas, buscar_tarefas
+
 
 def mostrar_menu():
     print("1 - criar tarefa")
@@ -19,9 +20,18 @@ def main():
         if opcao == "1":
             criar_tarefa(tarefas)
             
+        elif opcao =="2":
+            listar_tarefas(tarefas)
+            
+        elif opcao =="3":
+            buscar_tarefas(tarefas)
+                        
         elif opcao == "8":
             print("Até logo!")
             break
+        
+        else:
+            print("opcao invalida")
 
 main()
 
